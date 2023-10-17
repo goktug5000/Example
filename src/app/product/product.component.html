@@ -6,13 +6,22 @@
 
 </div>
 
+<div *ngFor="let item of products">
+    <div [class]="getClasses(item.id)">
+        {{item.name}}
+    </div>
+</div>
 
+
+
+<!--
 <div class="card">
     <div class="card-body">
         <h2>{{product.name}}</h2>
     </div>
     <div class="card-body">
-        <!--<img src="assets/img/{{product.imgUrl}}">-->
+        <img src="assets/img/{{product.imgUrl}}">
         <img [src]="'assets/img/'+product.imgUrl">
     </div>
 </div>
+-->

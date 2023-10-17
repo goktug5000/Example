@@ -9,7 +9,17 @@ import { Product } from '../product.model';
 })
 export class ProductComponent {
   model:ProductRepository=new ProductRepository();
-  
-
   product:any=this.model.getProductsById(3);
+  products:any;
+  constructor(){
+    this.products=this.model.getProducts();
+  }
+
+  getClasses(id:number):string|undefined{
+    return (this.model.getProductsById(id)?.price <= 1000 ? "bg-info" : "bg-secondary") + " m-2 p-2";
+  }
+
+
+
+
 }
