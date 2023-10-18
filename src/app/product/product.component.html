@@ -3,15 +3,67 @@
     <div class="card-body">
         sayısı= {{model.getProducts().length}}
     </div>
-
 </div>
 
-<div *ngFor="let item of products">
+<div class="card" *ngFor="let item of products">
     <div [class]="getClasses(item.id)">
         {{item.name}}
-    </div>
+        {{item.price}}
+        <button (click)="selectThis(item)">seç</button>
+    </div> 
 </div>
 
+
+<div *ngIf="(selectedProduct) != null">
+    <div class="">
+        <input #namea [value]="selectedProduct.name" type="text">
+    </div>
+
+
+    <div class="">
+        <input #desc [value]="selectedProduct.desc" type="text">
+    </div>
+
+
+    <div class="">
+        <img class="img-responsive" src="assets/img/{{selectedProduct.imgUrl}}" width="100">
+        <input #imgUrl [value]="selectedProduct.imgUrl" type="text">
+    </div>
+
+
+    <div class="">
+        <input #price [value]="selectedProduct.price" type="text">
+    </div>
+
+    <button (click)="update(namea.value,desc.value,imgUrl.value,price.value); openDialog()">güncelle</button>
+</div>
+
+
+<!--
+public id?:number,
+public name?:string,
+public desc?:string,
+public imgUrl?:string,
+public price?:number,
+-->
+
+
+<div class="card">
+    <div class="card-body">
+        <h4>lower upper</h4>
+        <p>{{title}}</p>
+        <p>{{title | lowercase}}</p>
+        <p>{{title | uppercase}}</p>
+        <p>{{title | titlecase}}</p>
+        <p></p>
+
+        <h4>date pipe</h4>
+        <p>{{today}}</p>
+        <p>{{today|date}}</p>
+
+
+    </div>
+</div>
 
 
 <!--

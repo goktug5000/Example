@@ -6,9 +6,9 @@ export class SimpleDataSource{
     constructor(){
         this.products = new Array<Product>(
             new Product(1,"s5","ii","sw4.jpg",500),
-            new Product(2,"s6","ii","sw4.jpg",900),
-            new Product(3,"s7","ii","sw4.jpg",1400),
-            new Product(4,"s8","ii","sw4.jpg",2000))
+            new Product(2,"s6","ii","kungfuPo.jpg",900),
+            new Product(3,"s7","ii","htyd.jpg",1400),
+            new Product(4,"s8","ii","shrek.jpg",2000))
     }
 
 
