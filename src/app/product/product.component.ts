@@ -3,6 +3,8 @@ import { ProductRepository } from '../repository.model';
 import { Product } from '../product.model';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
+
+
 @Component({
   selector: 'app',
   templateUrl: './product.component.html',
@@ -44,10 +46,14 @@ export class ProductComponent {
     this.selectedProduct=itemm;
   }
   update(namee:string,descc:string,imgUrll:string,pricee:string){
-
     this.products.find((q:Product)=>q.id===this.selectedProduct.id ? (q.name=namee,q.desc=descc,q.imgUrl=imgUrll,q.price=Number(pricee)):null);
-    
   }
 
-
+  isValidInput(str?:string):string{
+    if(str === "1"){
+      return "bg-info";
+    } 
+    return "bg-secondary";
+    //return this.selectedProduct.isThisValidForMe(str) ? "bg-info" : "bg-secondary";
+  }
 }

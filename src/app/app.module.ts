@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule, matDialogAnimations} from '@angular/material/dialog';
 import {MatButtonModule}from '@angular/material/button';
 import { PopUpComponent } from './pop-up/pop-up.component'
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
 
@@ -15,7 +17,8 @@ import { PopUpComponent } from './pop-up/pop-up.component'
     BrowserModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [ProductComponent]

@@ -5,6 +5,9 @@
     </div>
 </div>
 
+
+
+
 <div class="card" *ngFor="let item of products">
     <div [class]="getClasses(item.id)">
         {{item.name}}
@@ -14,9 +17,16 @@
 </div>
 
 
+
+
 <div *ngIf="(selectedProduct) != null">
     <div class="">
-        <input #namea [value]="selectedProduct.name" type="text">
+        <input #namea required [value]="selectedProduct.name" type="text" name="pName" [class]="isValidInput(namea.value)" (change)="isValidInput(namea.value)">
+        <!--<input #namea="ngModel" required [(ngModel)]="selectedProduct.name" type="text" name="pName">
+        <div class="alert alert-danger" *ngIf="!selectedProduct.isThisValidForMe()">
+            dnm
+        </div>
+-->
     </div>
 
 
@@ -32,11 +42,12 @@
 
 
     <div class="">
-        <input #price [value]="selectedProduct.price" type="text">
+        <input #price required type="number" [value]="selectedProduct.price" type="text">
     </div>
 
     <button (click)="update(namea.value,desc.value,imgUrl.value,price.value); openDialog()">güncelle</button>
 </div>
+
 
 
 <!--
